@@ -3,10 +3,10 @@ import {handleClickSort} from "./handleClickSort.js";
 
 
 //получает массив заголовков, генирирует необходимые компоненты и рендерит заголовок с прослушивателем события 'click'
-export function createHeader(colunmsTitle){
+export function createHeader(columnsTitle){
     const tr = document.createElement('tr');
 
-    colunmsTitle.forEach(column => {
+    columnsTitle.forEach(column => {
         const divText = createElementHTML('div', column.title);
         const divImg = createElementHTML('div', '⧋');
         const th = document.createElement('th')

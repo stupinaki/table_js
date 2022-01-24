@@ -1,10 +1,10 @@
-import {JSON as pages, rows} from "../data/json.js";
+import {Rows as pages, rows} from "../data/rows.js";
 import {createRows} from "./createRows.js";
-import {columns} from "../data/columns.js";
+import {getCurrentColumns} from "./handleChangeHide.js";
+
 
 let pageNumber = 0;
 const maxSize = rows.length / 10;
-export const page = getCurrentPage;
 
 const nextPage = document.querySelector('.nextPage');
 nextPage.addEventListener('click', goNext);
@@ -18,6 +18,7 @@ function goNext() {
     previousPage.disabled = false;
     pageNumber++
     const next = pages[pageNumber];
+    const columns = getCurrentColumns();
     createRows(next, columns);
 
     if (pageNumber >= maxSize - 1) {
@@ -35,6 +36,7 @@ function goPrevious() {
     nextPage.disabled = false;
     pageNumber--
     const previous = pages[pageNumber];
+    const columns = getCurrentColumns();
     createRows(previous, columns);
 }
 
@@ -42,6 +44,10 @@ function goPrevious() {
 //на основании этих данных остальные функции рендарят нужную страницу
 export function getCurrentPage(){
     return pages[pageNumber];
+}
+
+export function getCurrentPageNumber() {
+    return pageNumber;
 }
 
 

@@ -1,17 +1,16 @@
-import {getCurrentPage} from "./pagination.js";
-import {columns} from "../data/columns.js";
+import {getCurrentPageNumber} from "./pagination.js";
 import {get} from './get.js';
 import {createRows} from "./createRows.js";
+import {rows} from "../data/rows.js";
+import {chunk} from "./chunk.js";
+import {getCurrentColumns} from "./handleChangeHide.js";
 
-
-//todo сортировка должна сортировать все данные, а не только 1 страницу
 
 //обрабатывает событие 'click' и  сортирует данные
 //перезаписывает значение "direction" в зависимости от направления сортировки
 // отображает "⧋" в зависимости от направления сортировки
 export function handleClickSort(e){
-
-    const rows = getCurrentPage();
+    const columns = getCurrentColumns()
     const sortParams = e.currentTarget.id;
     const targetColumn = columns.find(column => column.id === sortParams);
     const arrow = document.getElementById(`arrow ${sortParams}`);
@@ -39,5 +38,13 @@ export function handleClickSort(e){
         arrowsArray.forEach(tag => tag.style = 'display: none');
         arrow.style = 'display: block';
     }
-    createRows(rows, columns);
+
+    //чтобы сортировка была не в рамках одной страницы, а по всему файлу:
+    //отсортированный массив rows, разделяем на массивы по 10 элементов
+    //получаем номер текушей страницы
+    //выводим массив чей индекс соответствует номеру страницы
+    const pages = chunk(rows, 10);
+    const currentPageNumber = getCurrentPageNumber();
+    const page = pages[currentPageNumber];
+    createRows(page, columns);
 }

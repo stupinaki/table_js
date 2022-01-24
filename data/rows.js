@@ -1,6 +1,6 @@
 import {chunk} from "../functions/chunk.js";
 
-
+//первоначальный Rows
  export const rows =
     [
         {
@@ -505,5 +505,5 @@ import {chunk} from "../functions/chunk.js";
         }
     ]
 
-//разбваем JSON на массив с массивами по 10 строк для пагинации
-export const JSON = chunk(rows, 10);
+//разбваем Rows на массив с массивами по 10 строк для пагинации
+export const Rows = chunk(rows, 10);

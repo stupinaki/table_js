@@ -16,7 +16,7 @@ th {
     white-space: nowrap;
 }
 
-#editForm_form {
+.editForm_form {
     display: none;
     width: 25%;
     margin-top: 12px;
