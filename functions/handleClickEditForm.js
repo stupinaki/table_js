@@ -26,7 +26,7 @@ export function handleClickEditForm (e) {
     about.value = targetRow.about;
 
     const eyeColor = editForm.elements.eyeColor;
-    //todo почему при клике на следующую строку цвета дублируются
+    eyeColor.innerHTML= '';
     const colors = [...new Set(rows.map(row => row.eyeColor))];
     colors.forEach(color => {
         const option = createElementHTML('option', color);

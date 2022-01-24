@@ -1,8 +1,4 @@
-body{
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-}
+
 table{
     width: 50%;
     border-collapse: collapse;
@@ -17,15 +13,13 @@ th {
 th {
     cursor: pointer;
     background-color: darkgray;
+    white-space: nowrap;
 }
 
-#editForm {
-    margin-top: 12px;
-
-}
 #editForm_form {
-    /*display: inline-grid;*/
     display: none;
+    width: 25%;
+    margin-top: 12px;
 }
 .editInProgress {
     background-color: rgba(0,0,0,0.1);
@@ -49,6 +43,13 @@ th {
 
 .pagination{
     margin-top: 12px;
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.hide {
     width: 50%;
     display: flex;
     justify-content: center;

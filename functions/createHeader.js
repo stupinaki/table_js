@@ -5,17 +5,21 @@ import {handleClickSort} from "./handleClickSort.js";
 //получает массив заголовков, генирирует необходимые компоненты и рендерит заголовок с прослушивателем события 'click'
 export function createHeader(colunmsTitle){
     const tr = document.createElement('tr');
+
     colunmsTitle.forEach(column => {
-        const th = createElementHTML('th', column.title);
-        const div = createElementHTML('div', '⧋');
-        div.style = "display: none";
-        div.id = `arrow ${column.id}`;
-        div.className = 'arrows'
+        const divText = createElementHTML('div', column.title);
+        const divImg = createElementHTML('div', '⧋');
+        const th = document.createElement('th')
+        divImg.style = "display: none";
+        divImg.id = `arrow ${column.id}`;
+        divImg.className = 'arrows'
         th.id = column.id;
-        th.append(div);
+        th.append(divText);
+        th.append(divImg);
         th.addEventListener('click', handleClickSort);
         tr.append(th);
     });
-    const table = document.getElementById('tableID');
-    table.prepend(tr);
+    const thead = document.getElementById('theadID');
+    thead.innerHTML = '';
+    thead.append(tr);
 }

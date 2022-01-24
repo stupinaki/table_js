@@ -3,11 +3,11 @@ import {insertsElementInDOM} from "./insertElementInDOM.js";
 import {get} from "./get.js";
 import {handleClickEditForm} from "./handleClickEditForm.js";
 
+
 //принимает массив строк (json), и массив заголовков
 // итерируется по массиву и на каждый элемент (объект) генирирует строку таблицы и вставляет в таблицу
 export function createRows(rowsArray, headersArray){
     const rows = [];
-// debugger
     rowsArray.forEach(person => {
         const tr = document.createElement('tr');
         tr.id = person.id;

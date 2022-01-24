@@ -44,8 +44,9 @@ export const columns = [
             const div = document.createElement('div');
             div.style = `background-color: ${content}; 
                         border-radius: 50%; 
-                        height: 4rem; 
-                        width: 4rem`;
+                        height: 2em; 
+                        width: 2em;
+                        margin: 0 auto`;
             td.append(div);
             return td;
         },
