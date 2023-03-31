@@ -1,6 +1,6 @@
 import {createElementHTML} from "./createElementHTML.js";
 import {insertsElementInDOM} from "./insertElementInDOM.js";
-import {get} from "./get.js";
+import {getNestedKey} from "./getNestedKey.js";
 import {handleClickEditForm} from "./handleClickEditForm.js";
 
 
@@ -13,7 +13,7 @@ export function createRows(rowsArray, headersArray){
         tr.id = person.id;
 
         headersArray.forEach(column => {
-            const personContent = get(person, column.id);
+            const personContent = getNestedKey(person, column.id);
             const hasOwnRender = column.render;
         //если в массиве заголовков, у колонки есть особый метод render,
         // то для создания td в заданной колонке используется он, иначе стандартный

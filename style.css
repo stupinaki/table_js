@@ -1,57 +1,95 @@
-
+h1, h2, h3 {
+    margin: 0;
+}
 table{
-    width: 50%;
+    width: 100%;
     border-collapse: collapse;
-    border: 2px solid rgb(200, 200, 200);
     font-size: 1.2rem;
 }
 td,
 th {
-    border: 1px solid rgb(190, 190, 190);
     padding: 0.5rem;
 }
 th {
     cursor: pointer;
-    background-color: darkgray;
+    background-color: #e7e6e6;
     white-space: nowrap;
 }
-
+tr {
+    border-bottom: 1px solid #e7e6e6;
+}
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
 .editForm_form {
     display: none;
-    width: 25%;
-    margin-top: 12px;
+    background-color: #00000033;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 .editInProgress {
-    background-color: rgba(0,0,0,0.1);
+    background-color: #00000019;
 }
-.pagination {
-    display: flex;
-}
-
 .previousPage,
-.nextPage {
-    width: 50%;
-    padding: 8px;
-    border: 1px solid black;
+.nextPage,
+.submit {
+    padding: 10px;
+    border: 1px solid #e7e6e6;
     cursor: pointer;
+    border-radius: 16px;
 }
 .previousPage:hover,
-.nextPage:hover {
+.nextPage:hover,
+.submit:hover {
     background-color: darkgray;
-    color: green;
+    color: #2341af;
 }
 
 .pagination{
-    margin-top: 12px;
-    width: 50%;
-
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 20px;
 }
 
 .hide {
-    width: 50%;
     display: flex;
+    flex-wrap: wrap;
+}
+.visibilitySetting {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+.editBlock {
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
+.inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    background: aliceblue;
+    min-width: 60%;
+    padding: 40px;
+    border-radius: 16px;
+}
+
+.editDetails {
+    padding: 10px;
+    border: 1px solid #e7e6e6;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
 

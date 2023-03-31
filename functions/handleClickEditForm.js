@@ -2,11 +2,8 @@ import {getCurrentPage} from "./pagination.js";
 import {createElementHTML} from "./createElementHTML.js";
 import {handleSubmit} from "./handleSubmit.js";
 
-
 export function handleClickEditForm(e) {
-
     const rows = getCurrentPage();
-//получаем форму
     const editForm = document.forms.form;
     editForm.style = `display: inline-grid`;
 

@@ -1,4 +1,4 @@
-import {set} from "./set.js";
+import {updateRowValue} from "./updateRowValue.js";
 import {getCurrentPage} from "./pagination.js";
 import {createRows} from "./createRows.js";
 import {getCurrentColumns} from "./handleChangeHide.js";
@@ -22,7 +22,7 @@ export function handleSubmit(e){
     const paths = Object.keys(inputValues);
 
     paths.forEach(path => {
-        set(targetRow,path,inputValues[path]);
+        updateRowValue(targetRow,path,inputValues[path]);
     });
     createRows(rows, columns);
 }

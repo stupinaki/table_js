@@ -6,14 +6,12 @@ export const columns = [
         id: 'name.firstName',
         direction: '',
         visible: true,
-
     },
     {
         title: 'Фамилия',
         id: 'name.lastName',
         direction: '',
         visible: true,
-
     },
     {
         title: 'Описание',
@@ -23,7 +21,6 @@ export const columns = [
         render(content){
             const td = document.createElement('td');
             const divContent = document.createElement('div');
-            // const divDots = document.createElement('div');
             divContent.style = "max-height: 3rem;" +
                             "overflow: hidden; " +
                             "display: -webkit-box; " +

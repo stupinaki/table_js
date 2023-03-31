@@ -1,5 +1,5 @@
 import {getCurrentPageNumber} from "./pagination.js";
-import {get} from './get.js';
+import {getNestedKey} from './getNestedKey.js';
 import {createRows} from "./createRows.js";
 import {rows} from "../data/rows.js";
 import {chunk} from "./chunk.js";
@@ -19,8 +19,8 @@ export function handleClickSort(e){
 
     if(targetColumn.direction === '' || targetColumn.direction === 'non-alphabetic'){
         rows.sort((row1, row2) => {
-            const str1 = get(row1,sortParams);
-            const str2 = get(row2,sortParams);
+            const str1 = getNestedKey(row1,sortParams);
+            const str2 = getNestedKey(row2,sortParams);
             return str1.localeCompare(str2);
         });
         columns.forEach(column => column.direction = '');
@@ -29,8 +29,8 @@ export function handleClickSort(e){
         arrow.style = 'transform: rotate(180deg)';
     }else{
         rows.sort((row1, row2) => {
-            const str1 = get(row1,sortParams);
-            const str2 = get(row2,sortParams);
+            const str1 = getNestedKey(row1,sortParams);
+            const str2 = getNestedKey(row2,sortParams);
             return str2.localeCompare(str1);
         });
         columns.forEach(column => column.direction = '');

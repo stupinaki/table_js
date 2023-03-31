@@ -2,38 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Table</title>
 </head>
 <body>
-<div>
-    <div class="hide"></div>
-    <table id="tableID">
-        <thead id="theadID"></thead>
-        <tbody id="tbodyID"></tbody>
-    </table>
-    <div class="pagination">
-        <button class="previousPage" disabled><b>⟵</b> Предыдущая</button>
-        <button class="nextPage">Следующая <b>⟶</b></button>
+<div class="container">
+    <div>
+        <div class="visibilitySetting">
+            <h3> Отображаемые колонки таблицы: </h3>
+            <div class="hide"></div>
+        </div>
+        <table id="tableID">
+            <thead id="theadID"></thead>
+            <tbody id="tbodyID"></tbody>
+        </table>
+        <div class="pagination">
+            <button class="previousPage" disabled><b>⟵</b> Предыдущая</button>
+            <button class="nextPage">Следующая <b>⟶</b></button>
+        </div>
+    </div>
+
+    <div class="editForm">
+        <form class="editForm_form" name="form">
+            <div class="editBlock">
+                <div class="inputs">
+                    <label for="firstName">Имя</label>
+                    <input id="firstName" name="name.firstName" type="text" class="editDetails">
+                    <label for="lastName">Фамилия</label>
+                    <input id="lastName" name="name.lastName" type="text" class="editDetails">
+                    <label for="about">Описание</label>
+                    <textarea id="about" name="about" class="editDetails"
+                              rows="10"> </textarea>
+                    <label for="eyeColor">Цвет глаз</label>
+                    <select id="eyeColor" name="eyeColor" class="editDetails"></select>
+                    <button type="submit" class="submit">
+                        Сохранить изменения
+                    </button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
-
-<div class="editForm">
-    <form class="editForm_form" name="form">
-        <lable>Имя</lable>
-        <input name="name.firstName" type="text">
-        <lable>Фамилия</lable>
-        <input name="name.lastName" type="text">
-        <lable>Описание</lable>
-        <input name="about" type="text">
-        <lable>Цвет глаз</lable>
-        <select name="eyeColor"></select>
-        <button type="submit" style="margin-top: 12px">
-            Сохранить изменения
-        </button>
-    </form>
-</div>
-
 
 <script src="script.js" type="module"></script>
 </body>
