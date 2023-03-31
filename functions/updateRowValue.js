@@ -1,7 +1,7 @@
 
 //получает объект (строка таблицы), путь, новое значение
 //доходит до предпоследнего элемента пути и перезаписывает значение после него на новое
-export function set(object, path, value){
+export function updateRowValue(object, path, value){
     const subPath = path.split('.');
     let target = object;
     for(let i = 0; i < subPath.length - 1; i++){
