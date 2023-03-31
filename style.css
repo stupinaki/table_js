@@ -9,9 +9,9 @@ table{
 td,
 th {
     padding: 0.5rem;
+    cursor: pointer;
 }
 th {
-    cursor: pointer;
     background-color: #e7e6e6;
     white-space: nowrap;
 }
